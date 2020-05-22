@@ -1,0 +1,896 @@
+$id: https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/build.yml
+$schema: http://json-schema.org/draft-07/schema
+additionalProperties: true
+default: {}
+description: A representation of a Drone CI Build
+examples:
+-   action: ''
+    after: 6783f72b40ea0af776d2ec40ef7e01c58b4794c3
+    author_avatar: https://avatars1.githubusercontent.com/u/817538?v=4
+    author_email: octocat@github.com
+    author_login: octocat
+    author_name: The Octocat
+    before: ''
+    created: 1537221914
+    event: push
+    finished: 1537222041
+    id: 1
+    link: https://github.com/drone/drone-git/compare/61e0cb11bbb1...6783f72b40ea
+    message: format yaml
+    number: 1
+    ref: refs/heads/master
+    repo_id: 168
+    sender: octocat
+    source: master
+    source_repo: ''
+    stages:
+    -   arch: amd64
+        build_id: 1
+        created: 1537221914
+        errignore: false
+        exit_code: 0
+        id: 1
+        machine: 2e0d5b2c7ff4
+        name: linux-amd64
+        number: 1
+        on_failure: false
+        on_success: true
+        os: linux
+        started: 1537221916
+        status: success
+        steps:
+        -   exit_code: 0
+            id: 4
+            name: clone
+            number: 1
+            started: 1537221916
+            status: success
+            step_id: 1
+            stopped: 1537221918
+            version: 4
+        -   exit_code: 0
+            id: 5
+            name: test
+            number: 2
+            started: 1537221918
+            status: success
+            step_id: 1
+            stopped: 1537221929
+            version: 4
+        -   exit_code: 0
+            id: 6
+            name: push
+            number: 3
+            started: 1537221929
+            status: success
+            step_id: 1
+            stopped: 1537221969
+            version: 4
+        stopped: 1537221969
+        updated: 1537221969
+        version: 4
+    -   arch: arm64
+        build_id: 1
+        created: 1537221914
+        errignore: false
+        exit_code: 0
+        id: 2
+        machine: 56bcfb7f1207
+        name: linux-arm64
+        number: 2
+        on_failure: false
+        on_success: true
+        os: linux
+        started: 1537221915
+        status: success
+        steps:
+        -   exit_code: 0
+            id: 1
+            name: clone
+            number: 1
+            started: 1537221916
+            status: success
+            step_id: 2
+            stopped: 1537221918
+            version: 4
+        -   exit_code: 0
+            id: 2
+            name: test
+            number: 2
+            started: 1537221918
+            status: success
+            step_id: 2
+            stopped: 1537221930
+            version: 4
+        -   exit_code: 0
+            id: 3
+            name: push
+            number: 3
+            started: 1537221930
+            status: success
+            step_id: 2
+            stopped: 1537221968
+            version: 4
+        stopped: 1537221969
+        updated: 1537221969
+        version: 4
+    -   arch: arm
+        build_id: 1
+        created: 1537221914
+        errignore: false
+        exit_code: 0
+        id: 3
+        machine: f01265229b89
+        name: linux-arm
+        number: 3
+        on_failure: false
+        on_success: true
+        os: linux
+        started: 1537221917
+        status: success
+        steps:
+        -   exit_code: 0
+            id: 7
+            name: clone
+            number: 1
+            started: 1537221918
+            status: success
+            step_id: 3
+            stopped: 1537221922
+            version: 4
+        -   exit_code: 0
+            id: 8
+            name: test
+            number: 2
+            started: 1537221922
+            status: success
+            step_id: 3
+            stopped: 1537221937
+            version: 4
+        -   exit_code: 0
+            id: 9
+            name: push
+            number: 3
+            started: 1537221937
+            status: success
+            step_id: 3
+            stopped: 1537222017
+            version: 4
+        stopped: 1537222024
+        updated: 1537222024
+        version: 4
+    -   arch: amd64
+        build_id: 1
+        created: 1537221914
+        depends_on:
+        - linux-arm
+        - linux-arm64
+        - linux-amd64
+        errignore: false
+        exit_code: 0
+        id: 4
+        machine: 2e0d5b2c7ff4
+        name: after
+        number: 4
+        on_failure: false
+        on_success: true
+        os: linux
+        started: 1537222025
+        status: success
+        steps:
+        -   exit_code: 0
+            id: 10
+            name: clone
+            number: 1
+            started: 1537222025
+            status: success
+            step_id: 4
+            stopped: 1537222027
+            version: 4
+        -   exit_code: 0
+            id: 11
+            name: manifest
+            number: 2
+            started: 1537222027
+            status: success
+            step_id: 4
+            stopped: 1537222040
+            version: 4
+        stopped: 1537222041
+        updated: 1537222041
+        version: 5
+    started: 1537221915
+    status: success
+    target: master
+    timestamp: 0
+    trigger: '@hook'
+    updated: 1537221915
+    version: 3
+properties:
+    action:
+        $id: '#/properties/action'
+        default: ''
+        examples:
+        - ''
+        title: The build action
+        type: string
+    after:
+        $id: '#/properties/after'
+        default: ''
+        description: The hash for the previous commit before this build commit
+        examples:
+        - 6783f72b40ea0af776d2ec40ef7e01c58b4794c3
+        title: The previous commit id
+        type: string
+    author_avatar:
+        $id: '#/properties/author_avatar'
+        default: ''
+        description: The avatar for the commit author
+        examples:
+        - https://avatars1.githubusercontent.com/u/817538?v=4
+        title: The commit author SCM avatar
+        type: string
+    author_email:
+        $id: '#/properties/author_email'
+        default: ''
+        description: The commit author email
+        examples:
+        - octocat@github.com
+        pattern: ^[^@]+@[^@]+\.[^@]+$
+        title: Commit author email
+        type: string
+    author_login:
+        $id: '#/properties/author_login'
+        default: ''
+        description: The Commit author username
+        examples:
+        - octocat
+        title: Commit author username
+        type: string
+    author_name:
+        $id: '#/properties/author_name'
+        default: ''
+        description: The commit author name in full
+        examples:
+        - The Octocat
+        title: Commit author name
+        type: string
+    before:
+        $id: '#/properties/before'
+        default: ''
+        description: The hash for the next commit after this build commit
+        examples:
+        - ''
+        title: The next commit id
+        type: string
+    created:
+        $id: '#/properties/created'
+        default: 0
+        description: The time the build was created in time since epoch
+        examples:
+        - 1537221914
+        title: Build created time
+        type: integer
+    event:
+        $id: '#/properties/event'
+        default: ''
+        description: The event that triggered this build
+        examples:
+        - push
+        title: Build Event
+        type: string
+    finished:
+        $id: '#/properties/finished'
+        default: 0
+        description: The time the build was finished in time since epoch
+        examples:
+        - 1537222041
+        title: Build finish time
+        type: integer
+    id:
+        $id: '#/properties/id'
+        default: 0
+        description: This is a simple signed long representation of the build id
+        examples:
+        - 1
+        readOnly: 'true'
+        title: The build id
+        type: integer
+    link:
+        $id: '#/properties/link'
+        default: ''
+        description: The scm link to the commit diff for this build
+        examples:
+        - https://github.com/drone/drone-git/compare/61e0cb11bbb1...6783f72b40ea
+        title: The link to commit diff
+        type: string
+    message:
+        $id: '#/properties/message'
+        default: ''
+        description: The message on this build's commit
+        examples:
+        - format yaml
+        title: The build commit message
+        type: string
+    number:
+        $id: '#/properties/number'
+        default: 0
+        description: The number of this build, unsigned long
+        examples:
+        - 1
+        title: Build number
+        type: integer
+    ref:
+        $id: '#/properties/ref'
+        default: ''
+        description: The git ref for this build commit
+        examples:
+        - refs/heads/master
+        title: The commit ref
+        type: string
+    repo_id:
+        $id: '#/properties/repo_id'
+        default: 0
+        description: This is a simple signed long representation of the build repo
+        examples:
+        - 168
+        readOnly: 'true'
+        title: The build repo id
+        type: integer
+    sender:
+        $id: '#/properties/sender'
+        default: ''
+        description: The username for the PR sender
+        examples:
+        - octocat
+        title: The PR sender username
+        type: string
+    source:
+        $id: '#/properties/source'
+        default: ''
+        description: The source branch for this commit, useful in PRs
+        examples:
+        - master
+        title: Source branch for this commit
+        type: string
+    source_repo:
+        $id: '#/properties/source_repo'
+        default: ''
+        description: The source repo for this commit, useful in PRs
+        examples:
+        - ''
+        title: Source repo for this commit
+        type: string
+    stages:
+        $id: '#/properties/stages'
+        additionalItems: true
+        default: []
+        description: The list of stages in this build
+        examples:
+        -   -   arch: amd64
+                build_id: 1
+                created: 1537221914
+                errignore: false
+                exit_code: 0
+                id: 1
+                machine: 2e0d5b2c7ff4
+                name: linux-amd64
+                number: 1
+                on_failure: false
+                on_success: true
+                os: linux
+                started: 1537221916
+                status: success
+                steps:
+                -   exit_code: 0
+                    id: 4
+                    name: clone
+                    number: 1
+                    started: 1537221916
+                    status: success
+                    step_id: 1
+                    stopped: 1537221918
+                    version: 4
+                -   exit_code: 0
+                    id: 5
+                    name: test
+                    number: 2
+                    started: 1537221918
+                    status: success
+                    step_id: 1
+                    stopped: 1537221929
+                    version: 4
+                -   exit_code: 0
+                    id: 6
+                    name: push
+                    number: 3
+                    started: 1537221929
+                    status: success
+                    step_id: 1
+                    stopped: 1537221969
+                    version: 4
+                stopped: 1537221969
+                updated: 1537221969
+                version: 4
+            -   arch: arm64
+                build_id: 1
+                created: 1537221914
+                errignore: false
+                exit_code: 0
+                id: 2
+                machine: 56bcfb7f1207
+                name: linux-arm64
+                number: 2
+                on_failure: false
+                on_success: true
+                os: linux
+                started: 1537221915
+                status: success
+                steps:
+                -   exit_code: 0
+                    id: 1
+                    name: clone
+                    number: 1
+                    started: 1537221916
+                    status: success
+                    step_id: 2
+                    stopped: 1537221918
+                    version: 4
+                -   exit_code: 0
+                    id: 2
+                    name: test
+                    number: 2
+                    started: 1537221918
+                    status: success
+                    step_id: 2
+                    stopped: 1537221930
+                    version: 4
+                -   exit_code: 0
+                    id: 3
+                    name: push
+                    number: 3
+                    started: 1537221930
+                    status: success
+                    step_id: 2
+                    stopped: 1537221968
+                    version: 4
+                stopped: 1537221969
+                updated: 1537221969
+                version: 4
+        items:
+            $id: '#/properties/stages/items'
+            anyOf:
+            -   $id: '#/properties/stages/items/anyOf/0'
+                additionalProperties: true
+                default: {}
+                description: A stage in this build
+                examples:
+                -   arch: amd64
+                    build_id: 1
+                    created: 1537221914
+                    errignore: false
+                    exit_code: 0
+                    id: 1
+                    machine: 2e0d5b2c7ff4
+                    name: linux-amd64
+                    number: 1
+                    on_failure: false
+                    on_success: true
+                    os: linux
+                    started: 1537221916
+                    status: success
+                    steps:
+                    -   exit_code: 0
+                        id: 4
+                        name: clone
+                        number: 1
+                        started: 1537221916
+                        status: success
+                        step_id: 1
+                        stopped: 1537221918
+                        version: 4
+                    -   exit_code: 0
+                        id: 5
+                        name: test
+                        number: 2
+                        started: 1537221918
+                        status: success
+                        step_id: 1
+                        stopped: 1537221929
+                        version: 4
+                    -   exit_code: 0
+                        id: 6
+                        name: push
+                        number: 3
+                        started: 1537221929
+                        status: success
+                        step_id: 1
+                        stopped: 1537221969
+                        version: 4
+                    stopped: 1537221969
+                    updated: 1537221969
+                    version: 4
+                properties:
+                    arch:
+                        $id: '#/properties/stages/items/anyOf/0/properties/arch'
+                        default: ''
+                        description: The CPU arch for the machine on which this stage
+                            is executed
+                        examples:
+                        - amd64
+                        title: The stage machine arch
+                        type: string
+                    build_id:
+                        $id: '#/properties/stages/items/anyOf/0/properties/build_id'
+                        default: 0
+                        description: The build id - The id of this build, unsigned
+                            long
+                        examples:
+                        - 1
+                        title: The build id
+                        type: integer
+                    created:
+                        $id: '#/properties/stages/items/anyOf/0/properties/created'
+                        default: 0
+                        description: The epoch time passed when the stage was created
+                        examples:
+                        - 1537221914
+                        title: The created time
+                        type: integer
+                    errignore:
+                        $id: '#/properties/stages/items/anyOf/0/properties/errignore'
+                        default: false
+                        description: Ignore current stage error
+                        examples:
+                        - false
+                        title: Ignore stage error
+                        type: boolean
+                    exit_code:
+                        $id: '#/properties/stages/items/anyOf/0/properties/exit_code'
+                        default: 0
+                        description: The exit code for this stage
+                        examples:
+                        - 0
+                        title: The stage exit code
+                        type: integer
+                    id:
+                        $id: '#/properties/stages/items/anyOf/0/properties/id'
+                        default: 0
+                        description: The id of this stage, unsigned long
+                        examples:
+                        - 1
+                        title: The stage id
+                        type: integer
+                    machine:
+                        $id: '#/properties/stages/items/anyOf/0/properties/machine'
+                        default: ''
+                        description: The id of the machine on which the stage is executed
+                        examples:
+                        - 2e0d5b2c7ff4
+                        title: The machine id
+                        type: string
+                    name:
+                        $id: '#/properties/stages/items/anyOf/0/properties/name'
+                        default: ''
+                        description: The name of this stage
+                        examples:
+                        - linux-amd64
+                        title: The stage name
+                        type: string
+                    number:
+                        $id: '#/properties/stages/items/anyOf/0/properties/number'
+                        default: 0
+                        description: The build stage number
+                        examples:
+                        - 1
+                        title: The number of this stage
+                        type: integer
+                    on_failure:
+                        $id: '#/properties/stages/items/anyOf/0/properties/on_failure'
+                        default: false
+                        description: On failure of this stage
+                        examples:
+                        - false
+                        title: On stage failure
+                        type: boolean
+                    on_success:
+                        $id: '#/properties/stages/items/anyOf/0/properties/on_success'
+                        default: false
+                        description: On success of this stage
+                        examples:
+                        - true
+                        title: On stage success
+                        type: boolean
+                    os:
+                        $id: '#/properties/stages/items/anyOf/0/properties/os'
+                        default: ''
+                        description: The OS of the machine on which this stage is
+                            executed
+                        examples:
+                        - linux
+                        title: The stage os
+                        type: string
+                    started:
+                        $id: '#/properties/stages/items/anyOf/0/properties/started'
+                        default: 0
+                        description: The epoch time passed when the stage started
+                        examples:
+                        - 1537221916
+                        title: The started time
+                        type: integer
+                    status:
+                        $id: '#/properties/stages/items/anyOf/0/properties/status'
+                        default: ''
+                        description: The status of this stage
+                        examples:
+                        - success
+                        title: The stage status
+                        type: string
+                    steps:
+                        $id: '#/properties/stages/items/anyOf/0/properties/steps'
+                        additionalItems: true
+                        default: []
+                        description: A step in a stage
+                        examples:
+                        -   -   exit_code: 0
+                                id: 4
+                                name: clone
+                                number: 1
+                                started: 1537221916
+                                status: success
+                                step_id: 1
+                                stopped: 1537221918
+                                version: 4
+                            -   exit_code: 0
+                                id: 5
+                                name: test
+                                number: 2
+                                started: 1537221918
+                                status: success
+                                step_id: 1
+                                stopped: 1537221929
+                                version: 4
+                        items:
+                            $id: '#/properties/stages/items/anyOf/0/properties/steps/items'
+                            anyOf:
+                            -   $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0'
+                                additionalProperties: true
+                                default: {}
+                                description: A step in a stage
+                                examples:
+                                -   exit_code: 0
+                                    id: 4
+                                    name: clone
+                                    number: 1
+                                    started: 1537221916
+                                    status: success
+                                    step_id: 1
+                                    stopped: 1537221918
+                                    version: 4
+                                properties:
+                                    exit_code:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/exit_code'
+                                        default: 0
+                                        description: The exit code of the step
+                                        examples:
+                                        - 0
+                                        title: The step exit code
+                                        type: integer
+                                    id:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/id'
+                                        default: 0
+                                        description: The id of the step
+                                        examples:
+                                        - 4
+                                        title: The step id
+                                        type: integer
+                                    name:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/name'
+                                        default: ''
+                                        description: The name of the step
+                                        examples:
+                                        - clone
+                                        title: The step name
+                                        type: string
+                                    number:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/number'
+                                        default: 0
+                                        description: The number of the step
+                                        examples:
+                                        - 1
+                                        title: The step number
+                                        type: integer
+                                    started:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/started'
+                                        default: 0
+                                        description: The time step started, time since
+                                            epoch
+                                        examples:
+                                        - 1537221916
+                                        title: The step started time
+                                        type: integer
+                                    status:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/status'
+                                        default: ''
+                                        description: The status of the step
+                                        examples:
+                                        - success
+                                        title: The step status
+                                        type: string
+                                    step_id:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/step_id'
+                                        default: 0
+                                        description: This has to do with the step
+                                            type
+                                        examples:
+                                        - 1
+                                        title: 'The step_id '
+                                        type: integer
+                                    stopped:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/stopped'
+                                        default: 0
+                                        description: The time step stopped, time since
+                                            epoch
+                                        examples:
+                                        - 1537221918
+                                        title: The step stopped time
+                                        type: integer
+                                    version:
+                                        $id: '#/properties/stages/items/anyOf/0/properties/steps/items/anyOf/0/properties/version'
+                                        default: 0
+                                        description: The version number of this step
+                                        examples:
+                                        - 4
+                                        title: The step version
+                                        type: integer
+                                required:
+                                - id
+                                - step_id
+                                - number
+                                - name
+                                - status
+                                - exit_code
+                                - started
+                                - stopped
+                                - version
+                                title: The stage step
+                                type: object
+                            title: The list of steps in the stage
+                        title: A stage step
+                        type: array
+                    stopped:
+                        $id: '#/properties/stages/items/anyOf/0/properties/stopped'
+                        default: 0
+                        description: The epoch time passed when the stage stopped
+                        examples:
+                        - 1537221969
+                        title: The stopped time
+                        type: integer
+                    updated:
+                        $id: '#/properties/stages/items/anyOf/0/properties/updated'
+                        default: 0
+                        description: The epoch time passed when the stage was created
+                        examples:
+                        - 1537221969
+                        title: The updated time
+                        type: integer
+                    version:
+                        $id: '#/properties/stages/items/anyOf/0/properties/version'
+                        default: 0
+                        description: The version id of the stage, short unsigned
+                        examples:
+                        - 4
+                        title: The stage version
+                        type: integer
+                required:
+                - id
+                - build_id
+                - number
+                - name
+                - status
+                - errignore
+                - exit_code
+                - machine
+                - os
+                - arch
+                - started
+                - stopped
+                - created
+                - updated
+                - version
+                - on_success
+                - on_failure
+                - steps
+                title: The build stage
+                type: object
+            title: The list of stages in the build
+        title: The Build Stages
+        type: array
+    started:
+        $id: '#/properties/started'
+        default: 0
+        description: The build start time in time since epoch
+        examples:
+        - 1537221915
+        title: Build start time
+        type: integer
+    status:
+        $id: '#/properties/status'
+        default: ''
+        description: The status of this build
+        examples:
+        - success
+        title: Build status
+        type: string
+    target:
+        $id: '#/properties/target'
+        default: ''
+        description: The target branch for this commit, useful in PRs
+        examples:
+        - master
+        title: Target branch for this commit
+        type: string
+    timestamp:
+        $id: '#/properties/timestamp'
+        default: 0
+        description: The timestamp for this build
+        examples:
+        - 0
+        title: The build timestamp
+        type: integer
+    trigger:
+        $id: '#/properties/trigger'
+        default: ''
+        description: What triggered this build
+        examples:
+        - '@hook'
+        readOnly: 'true'
+        title: The trigger for the build
+        type: string
+    updated:
+        $id: '#/properties/updated'
+        default: 0
+        description: The time the build was updated in time since epoch
+        examples:
+        - 1537221915
+        title: Build updated time
+        type: integer
+    version:
+        $id: '#/properties/version'
+        default: 0
+        description: The Version id for this build
+        examples:
+        - 3
+        title: Drone CI Build Version
+        type: integer
+readOnly: 'true'
+required:
+- id
+- repo_id
+- trigger
+- number
+- status
+- event
+- action
+- link
+- timestamp
+- message
+- before
+- after
+- ref
+- source_repo
+- source
+- target
+- author_login
+- author_name
+- author_email
+- author_avatar
+- sender
+- started
+- finished
+- created
+- updated
+- version
+- stages
+title: A build object
+type: object
