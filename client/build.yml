@@ -891,6 +891,5 @@ required:
 - created
 - updated
 - version
-- stages
 title: A build object
 type: object
