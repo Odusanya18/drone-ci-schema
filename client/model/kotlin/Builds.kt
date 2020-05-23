@@ -100,7 +100,7 @@ data class Build (
      */
     val sourceRepo: String,
 
-    val stages: List<TheBuildStage>? = null,
+    val stages: List<Stage>? = null,
 
     /**
      * The build start time in time since epoch
@@ -143,7 +143,7 @@ data class Build (
  *
  * A stage in this build
  */
-data class TheBuildStage (
+data class Stage (
     /**
      * The CPU arch for the machine on which this stage is executed
      */
