@@ -5,33 +5,6 @@
     "default": {
     },
     "description": "The root schema comprises the entire JSON document.",
-    "examples": [
-      {
-        "active": true,
-        "config_path": ".drone.json",
-        "counter": 1,
-        "created": 1537221753,
-        "default_branch": "master",
-        "git_http_url": "https://github.com/octocat/hello-world.git",
-        "git_ssh_url": "git@github.com:octocat/hello-world.git",
-        "id": 181,
-        "link": "https://github.com/octocat/hello-world",
-        "name": "hello-world",
-        "namespace": "octocat",
-        "private": true,
-        "protected": false,
-        "scm": "",
-        "slug": "octocat/hello-world",
-        "synced": 1537221753,
-        "timeout": 60,
-        "trusted": false,
-        "uid": "13933572",
-        "updated": 1537221753,
-        "user_id": 2,
-        "version": 3,
-        "visibility": "private"
-      }
-    ],
     "properties": {
       "active": {
         "$id": "#/properties/active",
