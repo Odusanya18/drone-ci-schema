@@ -1,0 +1,57 @@
+{
+  "$id": "http://example.com/example.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalItems": true,
+  "default": [
+
+  ],
+  "description": "The list of each log line.",
+  "items": {
+    "$id": "#/items",
+    "additionalProperties": true,
+    "default": {
+    },
+    "description": "An explanation about the purpose of this instance.",
+    "properties": {
+      "out": {
+        "$id": "#/items/properties/out",
+        "default": "",
+        "description": "The stdout,stderr of the log line.",
+        "examples": [
+          "Initialized empty Git repository in /drone/src/github.com/octocat/hello-world/.git/\n"
+        ],
+        "title": "The stdout,stderr",
+        "type": "string"
+      },
+      "pos": {
+        "$id": "#/items/properties/pos",
+        "default": 0,
+        "description": "The pos of the log line.",
+        "examples": [
+          0
+        ],
+        "title": "The position of this log line",
+        "type": "integer"
+      },
+      "time": {
+        "$id": "#/items/properties/time",
+        "default": 0,
+        "description": "The time this was logged, time after epoch.",
+        "examples": [
+          0
+        ],
+        "title": "The time of logged line",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "pos",
+      "out",
+      "time"
+    ],
+    "title": "A log item",
+    "type": "object"
+  },
+  "title": "The logs list",
+  "type": "array"
+}

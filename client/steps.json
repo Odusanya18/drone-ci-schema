@@ -1,0 +1,14 @@
+{
+    "$id": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/steps.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalItems": true,
+    "default": [
+  
+    ],
+    "description": "The list of steps in a stage",
+    "items": {
+      "$ref": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/step.json"
+    },
+    "title": "The list of steps in the stage",
+    "type": "array"
+  }

@@ -1,0 +1,162 @@
+{
+    "$id": "http://example.com/example.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": true,
+    "default": {
+    },
+    "description": "The root schema comprises the entire JSON document.",
+    "examples": [
+      {
+        "active": true,
+        "admin": true,
+        "avatar": "https://avatars1.githubusercontent.com/u/817538?v=4",
+        "created": 1537221751,
+        "email": "octocat@github.com",
+        "id": 2,
+        "last_login": 1537221751,
+        "login": "octocat",
+        "machine": false,
+        "synced": 1537375999,
+        "syncing": false,
+        "updated": 1537221751
+      }
+    ],
+    "properties": {
+      "active": {
+        "$id": "#/properties/active",
+        "default": false,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          true
+        ],
+        "title": "The active schema",
+        "type": "boolean"
+      },
+      "admin": {
+        "$id": "#/properties/admin",
+        "default": false,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          true
+        ],
+        "title": "The admin schema",
+        "type": "boolean"
+      },
+      "avatar": {
+        "$id": "#/properties/avatar",
+        "default": "",
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          "https://avatars1.githubusercontent.com/u/817538?v=4"
+        ],
+        "title": "The avatar schema",
+        "type": "string"
+      },
+      "created": {
+        "$id": "#/properties/created",
+        "default": 0,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          1537221751
+        ],
+        "title": "The created schema",
+        "type": "integer"
+      },
+      "email": {
+        "$id": "#/properties/email",
+        "default": "",
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          "octocat@github.com"
+        ],
+        "title": "The email schema",
+        "type": "string"
+      },
+      "id": {
+        "$id": "#/properties/id",
+        "default": 0,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          2
+        ],
+        "title": "The id schema",
+        "type": "integer"
+      },
+      "last_login": {
+        "$id": "#/properties/last_login",
+        "default": 0,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          1537221751
+        ],
+        "title": "The last_login schema",
+        "type": "integer"
+      },
+      "login": {
+        "$id": "#/properties/login",
+        "default": "",
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          "octocat"
+        ],
+        "title": "The login schema",
+        "type": "string"
+      },
+      "machine": {
+        "$id": "#/properties/machine",
+        "default": false,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          false
+        ],
+        "title": "The machine schema",
+        "type": "boolean"
+      },
+      "synced": {
+        "$id": "#/properties/synced",
+        "default": 0,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          1537375999
+        ],
+        "title": "The synced schema",
+        "type": "integer"
+      },
+      "syncing": {
+        "$id": "#/properties/syncing",
+        "default": false,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          false
+        ],
+        "title": "The syncing schema",
+        "type": "boolean"
+      },
+      "updated": {
+        "$id": "#/properties/updated",
+        "default": 0,
+        "description": "An explanation about the purpose of this instance.",
+        "examples": [
+          1537221751
+        ],
+        "title": "The updated schema",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "id",
+      "login",
+      "email",
+      "machine",
+      "admin",
+      "active",
+      "avatar",
+      "syncing",
+      "synced",
+      "created",
+      "updated",
+      "last_login"
+    ],
+    "title": "The root schema",
+    "type": "object"
+  }

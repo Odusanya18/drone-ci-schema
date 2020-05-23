@@ -1,0 +1,14 @@
+{
+    "$id": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/builds.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalItems": true,
+    "default": [
+  
+    ],
+    "description": "A list of Drone CI Builds",
+    "items": {
+      "$ref": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/build.json"
+    },
+    "title": "The Drone CI Build list",
+    "type": "array"
+  }

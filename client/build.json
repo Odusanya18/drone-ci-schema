@@ -1,0 +1,306 @@
+{
+  "$id": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/build.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": true,
+  "default": {},
+  "description": "A representation of a Drone CI Build",
+  "properties": {
+    "action": {
+      "$id": "#/properties/action",
+      "default": "",
+      "examples": [
+        ""
+      ],
+      "title": "The build action",
+      "type": "string"
+    },
+    "after": {
+      "$id": "#/properties/after",
+      "default": "",
+      "description": "The hash for the previous commit before this build commit",
+      "examples": [
+        "6783f72b40ea0af776d2ec40ef7e01c58b4794c3"
+      ],
+      "title": "The previous commit id",
+      "type": "string"
+    },
+    "author_avatar": {
+      "$id": "#/properties/author_avatar",
+      "default": "",
+      "description": "The avatar for the commit author",
+      "examples": [
+        "https://avatars1.githubusercontent.com/u/817538?v=4"
+      ],
+      "title": "The commit author SCM avatar",
+      "type": "string"
+    },
+    "author_email": {
+      "$id": "#/properties/author_email",
+      "default": "",
+      "description": "The commit author email",
+      "examples": [
+        "octocat@github.com"
+      ],
+      "pattern": "^[^@]+@[^@]+\\.[^@]+$",
+      "title": "Commit author email",
+      "type": "string"
+    },
+    "author_login": {
+      "$id": "#/properties/author_login",
+      "default": "",
+      "description": "The Commit author username",
+      "examples": [
+        "octocat"
+      ],
+      "title": "Commit author username",
+      "type": "string"
+    },
+    "author_name": {
+      "$id": "#/properties/author_name",
+      "default": "",
+      "description": "The commit author name in full",
+      "examples": [
+        "The Octocat"
+      ],
+      "title": "Commit author name",
+      "type": "string"
+    },
+    "before": {
+      "$id": "#/properties/before",
+      "default": "",
+      "description": "The hash for the next commit after this build commit",
+      "examples": [
+        ""
+      ],
+      "title": "The next commit id",
+      "type": "string"
+    },
+    "created": {
+      "$id": "#/properties/created",
+      "default": 0,
+      "description": "The time the build was created in time since epoch",
+      "examples": [
+        1537221914
+      ],
+      "title": "Build created time",
+      "type": "integer"
+    },
+    "event": {
+      "$id": "#/properties/event",
+      "default": "",
+      "description": "The event that triggered this build",
+      "examples": [
+        "push"
+      ],
+      "title": "Build Event",
+      "type": "string"
+    },
+    "finished": {
+      "$id": "#/properties/finished",
+      "default": 0,
+      "description": "The time the build was finished in time since epoch",
+      "examples": [
+        1537222041
+      ],
+      "title": "Build finish time",
+      "type": "integer"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "default": 0,
+      "description": "This is a simple signed long representation of the build id",
+      "examples": [
+        1
+      ],
+      "readOnly": true,
+      "title": "The build id",
+      "type": "integer"
+    },
+    "link": {
+      "$id": "#/properties/link",
+      "default": "",
+      "description": "The scm link to the commit diff for this build",
+      "examples": [
+        "https://github.com/drone/drone-git/compare/61e0cb11bbb1...6783f72b40ea"
+      ],
+      "title": "The link to commit diff",
+      "type": "string"
+    },
+    "message": {
+      "$id": "#/properties/message",
+      "default": "",
+      "description": "The message on this build's commit",
+      "examples": [
+        "format yaml"
+      ],
+      "title": "The build commit message",
+      "type": "string"
+    },
+    "number": {
+      "$id": "#/properties/number",
+      "default": 0,
+      "description": "The number of this build, unsigned long",
+      "examples": [
+        1
+      ],
+      "title": "Build number",
+      "type": "integer"
+    },
+    "ref": {
+      "$id": "#/properties/ref",
+      "default": "",
+      "description": "The git ref for this build commit",
+      "examples": [
+        "refs/heads/master"
+      ],
+      "title": "The commit ref",
+      "type": "string"
+    },
+    "repo_id": {
+      "$id": "#/properties/repo_id",
+      "default": 0,
+      "description": "This is a simple signed long representation of the build repo",
+      "examples": [
+        168
+      ],
+      "readOnly": true,
+      "title": "The build repo id",
+      "type": "integer"
+    },
+    "sender": {
+      "$id": "#/properties/sender",
+      "default": "",
+      "description": "The username for the PR sender",
+      "examples": [
+        "octocat"
+      ],
+      "title": "The PR sender username",
+      "type": "string"
+    },
+    "source": {
+      "$id": "#/properties/source",
+      "default": "",
+      "description": "The source branch for this commit, useful in PRs",
+      "examples": [
+        "master"
+      ],
+      "title": "Source branch for this commit",
+      "type": "string"
+    },
+    "source_repo": {
+      "$id": "#/properties/source_repo",
+      "default": "",
+      "description": "The source repo for this commit, useful in PRs",
+      "examples": [
+        ""
+      ],
+      "title": "Source repo for this commit",
+      "type": "string"
+    },
+    "stages": {
+      "$ref": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/stages.json"
+    },
+    "started": {
+      "$id": "#/properties/started",
+      "default": 0,
+      "description": "The build start time in time since epoch",
+      "examples": [
+        1537221915
+      ],
+      "title": "Build start time",
+      "type": "integer"
+    },
+    "status": {
+      "$id": "#/properties/status",
+      "default": "",
+      "description": "The status of this build",
+      "examples": [
+        "success"
+      ],
+      "title": "Build status",
+      "type": "string"
+    },
+    "target": {
+      "$id": "#/properties/target",
+      "default": "",
+      "description": "The target branch for this commit, useful in PRs",
+      "examples": [
+        "master"
+      ],
+      "title": "Target branch for this commit",
+      "type": "string"
+    },
+    "timestamp": {
+      "$id": "#/properties/timestamp",
+      "default": 0,
+      "description": "The timestamp for this build",
+      "examples": [
+        0
+      ],
+      "title": "The build timestamp",
+      "type": "integer"
+    },
+    "trigger": {
+      "$id": "#/properties/trigger",
+      "default": "",
+      "description": "What triggered this build",
+      "examples": [
+        "@hook"
+      ],
+      "readOnly": true,
+      "title": "The trigger for the build",
+      "type": "string"
+    },
+    "updated": {
+      "$id": "#/properties/updated",
+      "default": 0,
+      "description": "The time the build was updated in time since epoch",
+      "examples": [
+        1537221915
+      ],
+      "title": "Build updated time",
+      "type": "integer"
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "default": 0,
+      "description": "The Version id for this build",
+      "examples": [
+        3
+      ],
+      "title": "Drone CI Build Version",
+      "type": "integer"
+    }
+  },
+  "readOnly": true,
+  "required": [
+    "id",
+    "repo_id",
+    "trigger",
+    "number",
+    "status",
+    "event",
+    "action",
+    "link",
+    "timestamp",
+    "message",
+    "before",
+    "after",
+    "ref",
+    "source_repo",
+    "source",
+    "target",
+    "author_login",
+    "author_name",
+    "author_email",
+    "author_avatar",
+    "sender",
+    "started",
+    "finished",
+    "created",
+    "updated",
+    "version"
+  ],
+  "title": "A build object",
+  "type": "object"
+}

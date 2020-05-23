@@ -1,0 +1,14 @@
+{
+    "$id": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/crons.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalItems": true,
+    "default": [
+  
+    ],
+    "description": "A list of Drone CI CronJobs.",
+    "items": {
+      "$ref": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/cron.json"
+    },
+    "title": "The Drone Cron list",
+    "type": "array"
+  }
