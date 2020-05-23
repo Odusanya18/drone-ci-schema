@@ -1,0 +1,14 @@
+{
+    "$id": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/users.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalItems": true,
+    "default": [
+  
+    ],
+    "description": "The list of Drone Users",
+    "items": {
+      "$ref": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/user.json"
+    },
+    "title": "The list of Drone CI Users",
+    "type": "array"
+  }

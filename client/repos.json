@@ -1,0 +1,14 @@
+{
+    "$id": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/repos.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalItems": true,
+    "default": [
+  
+    ],
+    "description": "The list of Drone CI Repos",
+    "items": {
+      "$ref": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/repo.json"
+    },
+    "title": "The list of Drone CI Repos",
+    "type": "array"
+  }
