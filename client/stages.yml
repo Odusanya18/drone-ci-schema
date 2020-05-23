@@ -1,0 +1,9 @@
+$id: https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/stages.yml
+$schema: http://json-schema.org/draft-07/schema
+additionalItems: true
+default: []
+description: The list of stages in this build
+items:
+    $ref: https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/stage.yml
+title: The Build Stages
+type: array

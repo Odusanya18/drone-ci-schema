@@ -3,19 +3,6 @@ $schema: http://json-schema.org/draft-07/schema
 additionalProperties: true
 default: {}
 description: A representation of a Drone CI Cron
-examples:
--   branch: master
-    created: 1537302981
-    disabled: false
-    event: push
-    expr: 0 */5 * * * *
-    id: 3
-    name: every-10-minutes
-    next: 1537463700
-    prev: 1537463400
-    repo_id: 47
-    updated: 1537302981
-    version: 0
 properties:
     branch:
         $id: '#/properties/branch'

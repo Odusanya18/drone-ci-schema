@@ -1,0 +1,92 @@
+$id: 'https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/step.yml'
+additionalProperties: true
+default: {}
+description: A step in a stage
+properties:
+    exit_code:
+        $id: '#/properties/exit_code'
+        default: 0
+        description: The exit code of the step
+        examples:
+        - 0
+        title: The step exit code
+        type: integer
+    id:
+        $id: '#/properties/id'
+        default: 0
+        description: The id of the step
+        examples:
+        - 4
+        title: The step id
+        type: integer
+    name:
+        $id: '#/properties/name'
+        default: ''
+        description: The name of the step
+        examples:
+        - clone
+        title: The step name
+        type: string
+    number:
+        $id: '#/properties/number'
+        default: 0
+        description: The number of the step
+        examples:
+        - 1
+        title: The step number
+        type: integer
+    started:
+        $id: '#/properties/started'
+        default: 0
+        description: The time step started, time since
+            epoch
+        examples:
+        - 1537221916
+        title: The step started time
+        type: integer
+    status:
+        $id: '#/properties/status'
+        default: ''
+        description: The status of the step
+        examples:
+        - success
+        title: The step status
+        type: string
+    step_id:
+        $id: '#/properties/step_id'
+        default: 0
+        description: This has to do with the step
+            type
+        examples:
+        - 1
+        title: 'The step_id '
+        type: integer
+    stopped:
+        $id: '#/properties/stopped'
+        default: 0
+        description: The time step stopped, time since
+            epoch
+        examples:
+        - 1537221918
+        title: The step stopped time
+        type: integer
+    version:
+        $id: '#/properties/version'
+        default: 0
+        description: The version number of this step
+        examples:
+        - 4
+        title: The step version
+        type: integer
+required:
+- id
+- step_id
+- number
+- name
+- status
+- exit_code
+- started
+- stopped
+- version
+title: The stage step
+type: object
