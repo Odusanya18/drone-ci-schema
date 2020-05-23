@@ -1,5 +1,5 @@
 {
-  "$id": "http://example.com/example.json",
+  "$id": "https://raw.githubusercontent.com/Odusanya18/drone-ci-schema/master/client/logs.json",
   "$schema": "http://json-schema.org/draft-07/schema",
   "additionalItems": true,
   "default": [
